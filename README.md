@@ -1,2 +1,15 @@
-# ZiJin-Mining-stock-prediction-
-受Kaggle金价预测的想法,反过来利用机器学习预测中国A股市场的紫金矿业股票的学习记录
+# ZiJin-Mining-stock-prediction-  
+## 项目动机  
+受Kaggle金价预测的想法,反过来利用机器学习预测中国A股市场的紫金矿业股票的学习记录,因为我自己重仓了紫金矿业,结合最近伊朗危机石油价格大幅波动,想要去用数据分析来辅助自己的买卖点,实现价值投资选择股票,技术分析判断情绪与历史数据三重判断.
+
+- ## 时间
+  - 2026/7/24  
+      第一次创建项目,准备学习如何搜集数据集
+
+
+
+
+## 数据来源
+
+- 紫金矿业历史股价（[Tushare](https://tushare.pro)）
+- 国际金价数据（[Yahoo Finance](https://finance.yahoo.com)）
