@@ -1,0 +1,73 @@
+Year,Feature,Outside_percent,Max_excess_std
+2021,A_500,6.25,0.28586118590375403
+2021,Dollar Index,0.0,0.0
+2021,cn_10y_rate,0.0,0.0
+2021,us_10y_rate,0.0,0.0
+2021,brent,0.0,0.0
+2021,Copper Futures Price,86.39705882352942,2.1748808320769832
+2021,Gold Futures Price,0.0,0.0
+2021,elapsed_days,100.0,0.40294284794648416
+2021,Gold Futures Price_return_5,0.0,0.0
+2021,Gold Futures Price_return_20,0.0,0.0
+2021,Copper Futures Price_return_5,0.0,0.0
+2021,Copper Futures Price_return_20,0.0,0.0
+2022,A_500,0.0,0.0
+2022,Dollar Index,60.58394160583942,1.6039437004833037
+2022,cn_10y_rate,0.0,0.0
+2022,us_10y_rate,35.76642335766424,1.6279366423703407
+2022,brent,12.408759124087592,0.5730431923385134
+2022,Copper Futures Price,2.5547445255474455,0.2961584293658245
+2022,Gold Futures Price,0.0,0.0
+2022,elapsed_days,100.0,0.3608440492719189
+2022,Gold Futures Price_return_5,0.0,0.0
+2022,Gold Futures Price_return_20,0.0,0.0
+2022,Copper Futures Price_return_5,0.0,0.0
+2022,Copper Futures Price_return_20,2.9197080291970803,0.6578761137307731
+2023,A_500,0.0,0.0
+2023,Dollar Index,0.0,0.0
+2023,cn_10y_rate,0.0,0.0
+2023,us_10y_rate,26.373626373626376,1.065742558910629
+2023,brent,0.0,0.0
+2023,Copper Futures Price,0.0,0.0
+2023,Gold Futures Price,2.93040293040293,0.11892047797649373
+2023,elapsed_days,100.0,0.32666200807074514
+2023,Gold Futures Price_return_5,0.0,0.0
+2023,Gold Futures Price_return_20,0.0,0.0
+2023,Copper Futures Price_return_5,0.0,0.0
+2023,Copper Futures Price_return_20,0.0,0.0
+2024,A_500,0.0,0.0
+2024,Dollar Index,0.0,0.0
+2024,cn_10y_rate,91.94139194139194,1.6670170645461175
+2024,us_10y_rate,0.0,0.0
+2024,brent,0.0,0.0
+2024,Copper Futures Price,1.098901098901099,0.2539753429278874
+2024,Gold Futures Price,82.78388278388277,2.5114082061015326
+2024,elapsed_days,100.0,0.29942326497561444
+2024,Gold Futures Price_return_5,0.0,0.0
+2024,Gold Futures Price_return_20,0.0,0.0
+2024,Copper Futures Price_return_5,0.0,0.0
+2024,Copper Futures Price_return_20,0.0,0.0
+2025,A_500,0.0,0.0
+2025,Dollar Index,0.0,0.0
+2025,cn_10y_rate,36.940298507462686,0.14465500328680875
+2025,us_10y_rate,0.0,0.0
+2025,brent,0.0,0.0
+2025,Copper Futures Price,22.388059701492537,1.0409676277964275
+2025,Gold Futures Price,92.53731343283582,4.72950633717563
+2025,elapsed_days,100.0,0.27499760792665934
+2025,Gold Futures Price_return_5,0.0,0.0
+2025,Gold Futures Price_return_20,0.0,0.0
+2025,Copper Futures Price_return_5,3.3582089552238807,3.945620352445737
+2025,Copper Futures Price_return_20,1.1194029850746268,0.1305551718489271
+2026,A_500,0.0,0.0
+2026,Dollar Index,0.0,0.0
+2026,cn_10y_rate,0.0,0.0
+2026,us_10y_rate,0.0,0.0
+2026,brent,1.9736842105263157,0.21770210787346247
+2026,Copper Futures Price,73.02631578947368,1.0443523100950582
+2026,Gold Futures Price,61.8421052631579,1.2760459309077916
+2026,elapsed_days,100.0,0.14257255851253728
+2026,Gold Futures Price_return_5,0.0,0.0
+2026,Gold Futures Price_return_20,2.631578947368421,0.6075456589186835
+2026,Copper Futures Price_return_5,0.0,0.0
+2026,Copper Futures Price_return_20,0.0,0.0

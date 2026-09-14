@@ -1,0 +1,5 @@
+{
+  "selected_epoch": 2000,
+  "validation_equal_month_mape": 5.839647244344213,
+  "rule": "minimum equal-month validation MAPE; tie -> fewer epochs"
+}

@@ -1,0 +1,47 @@
+{
+  "years": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "seed": 42,
+  "lr": 0.01,
+  "groups": {
+    "Full_100": [
+      "A_500",
+      "Dollar Index",
+      "cn_10y_rate",
+      "us_10y_rate",
+      "brent",
+      "Copper Futures Price",
+      "Gold Futures Price",
+      "gold_5",
+      "gold_20",
+      "copper_5",
+      "copper_20"
+    ],
+    "Base_train_stop": [
+      "A_500",
+      "Dollar Index",
+      "cn_10y_rate",
+      "us_10y_rate",
+      "brent",
+      "Copper Futures Price",
+      "Gold Futures Price"
+    ]
+  },
+  "relative_min_delta": 0.01,
+  "patience": 100,
+  "max_epochs": 10000,
+  "data_end": "2026-07-23 00:00:00",
+  "dataset_sha256": "23062ad3c5dce8d96d849963cf04f6108fb078b896ccf0ca7a4e72965df17baf"
+}
