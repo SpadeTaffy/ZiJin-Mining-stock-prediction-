@@ -1,0 +1,29 @@
+history=[]
+def fit_stage(X,train_idx,seed,stage,month):
+    random.seed(seed);np.random.seed(seed);torch.manual_seed(seed)
+    sx=StandardScaler().fit(X.loc[train_idx]);sy=StandardScaler().fit(y.loc[train_idx].to_numpy().reshape(-1,1))
+    xt=torch.tensor(sx.transform(X.loc[train_idx]),dtype=torch.float32);yt=torch.tensor(sy.transform(y.loc[train_idx].to_numpy().reshape(-1,1)),dtype=torch.float32)
+    model=nn.Sequential(nn.Linear(X.shape[1],16),nn.ReLU(),nn.Linear(16,32),nn.ReLU(),nn.Linear(32,1))
+    opt=torch.optim.Adam(model.parameters(),lr=LR)
+    for epoch in range(1,EPOCHS+1):
+        model.train();opt.zero_grad();loss=((model(xt)-yt)**2).mean();assert torch.isfinite(loss)
+        loss.backward();opt.step();model.eval()
+        with torch.no_grad():z=model(xt).numpy()
+        p=sy.inverse_transform(z).ravel();mse=float(np.mean((p-y.loc[train_idx].to_numpy())**2))
+        history.append(dict(Month=month,Seed=seed,Stage=stage,Epoch=epoch,Train_MSE=mse,Train_MSE_standardized=mse/float(sy.scale_[0]**2)))
+    torch.save(dict(state_dict=model.state_dict(),features=list(X.columns),seed=seed,epochs=EPOCHS,train_start=str(train_idx.min()),train_end=str(train_idx.max()),sx_mean=sx.mean_.tolist(),sx_scale=sx.scale_.tolist(),sy_mean=sy.mean_.tolist(),sy_scale=sy.scale_.tolist()),OUT/f'{month}_{stage}_seed{seed}.pt')
+    return model,sx,sy
+
+def predict(bundle,X):
+    model,sx,sy=bundle;model.eval()
+    with torch.no_grad():z=model(torch.tensor(sx.transform(X),dtype=torch.float32)).numpy()
+    p=sy.inverse_transform(z).ravel();assert np.isfinite(p).all();return pd.Series(p,index=X.index)
+
+def score(pred,idx):
+    err=pred.loc[idx].to_numpy()-y.loc[idx].to_numpy()
+    return dict(N=len(idx),MAPE=float(100*np.mean(np.abs(err)/np.abs(y.loc[idx].to_numpy()))),MSE=float(np.mean(err**2)))
+
+def stack_predict(base,stack,X):
+    bp=predict(base,X[BASE]);meta=X[RETURNS].copy();meta.insert(0,'base_prediction',bp)
+    return predict(stack,meta)
+

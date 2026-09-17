@@ -1,0 +1,13 @@
+{
+  "Update_ID": "update_54",
+  "Kind": "Triggered",
+  "Trigger_date": "2020-11-24",
+  "Effective_date": "2020-11-25",
+  "Selected_seed": 550343,
+  "Validation_MAPE": 11.586275264381406,
+  "Candidate_train_end": "2020-08-24",
+  "Validation_start": "2020-08-25",
+  "Validation_end": "2020-11-24",
+  "Refit_train_end": "2020-11-24",
+  "Refit_N": 2279
+}

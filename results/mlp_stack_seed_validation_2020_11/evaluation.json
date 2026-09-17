@@ -1,0 +1,10 @@
+{
+  "selected_seed": 2024,
+  "selected_validation_mape": 8.143373006601767,
+  "selected_test_mape": 18.234946318761658,
+  "selected_test_rank": 5,
+  "five_seed_mean_test_mape": 14.828167986463347,
+  "five_seed_test_sd": 3.2045384861146995,
+  "selected_minus_seed_mean_pp": 3.4067783322983107,
+  "refit": false
+}

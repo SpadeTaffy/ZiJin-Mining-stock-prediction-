@@ -1,0 +1,16 @@
+{
+  "selected_seed": 2025,
+  "criterion": "Jan-Mar 2020 MAPE only",
+  "validation_mape": 6.6502012852992936,
+  "validation_start": "2020-01-01",
+  "validation_end": "2020-03-31",
+  "candidate_order": [
+    42,
+    7,
+    123,
+    2024,
+    2025
+  ],
+  "epochs": 100,
+  "refit": false
+}

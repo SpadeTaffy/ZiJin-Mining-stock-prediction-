@@ -1,0 +1,24 @@
+import os,io,contextlib,traceback
+from pathlib import Path
+import nbformat
+from IPython.core.interactiveshell import InteractiveShell
+os.environ['MLP12_CROSSING_OUT']=str(Path('outputs/mlp_crossing_update_12').resolve())
+os.environ['MPLCONFIGDIR']='/private/tmp/mlp11-matplotlib'
+p=Path('outputs/12_减少预测的时间,扩大验证集的范围.ipynb')
+n=nbformat.read(p,as_version=4); shell=InteractiveShell.instance(); scope={}; count=0
+for cell in n.cells[int(Path('outputs/mlp_crossing_update_12/start_cell.txt').read_text()):]:
+ if cell.cell_type!='code': continue
+ count+=1; cell.execution_count=count; cell.outputs=[]
+ def publish(data,metadata=None,**kwargs):
+  cell.outputs.append(nbformat.v4.new_output('display_data',data=data,metadata=metadata or {}))
+ shell.display_pub.publish=publish
+ buf=io.StringIO()
+ try:
+  with contextlib.redirect_stdout(buf): exec(compile(cell.source,str(p),'exec'),scope)
+ except Exception:
+  print(buf.getvalue()); traceback.print_exc(); nbformat.write(n,p); raise
+ if buf.getvalue():
+  cell.outputs.append(nbformat.v4.new_output('stream',name='stdout',text=buf.getvalue())); print(buf.getvalue())
+ print('Completed cell',count,flush=True)
+nbformat.validate(n); nbformat.write(n,p)
+print(scope['monthly'].to_string()); print(scope['summary'].to_string(index=False))

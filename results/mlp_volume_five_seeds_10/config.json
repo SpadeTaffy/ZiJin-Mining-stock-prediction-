@@ -1,0 +1,74 @@
+{
+  "years": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "seeds": [
+    42,
+    7,
+    123,
+    2024,
+    2025
+  ],
+  "epochs": 100,
+  "features": {
+    "Base_100": [
+      "A_500",
+      "Dollar Index",
+      "cn_10y_rate",
+      "us_10y_rate",
+      "brent",
+      "Copper Futures Price",
+      "Gold Futures Price"
+    ],
+    "Full_100": [
+      "A_500",
+      "Dollar Index",
+      "cn_10y_rate",
+      "us_10y_rate",
+      "brent",
+      "Copper Futures Price",
+      "Gold Futures Price",
+      "gold_5",
+      "gold_20",
+      "copper_5",
+      "copper_20"
+    ],
+    "Volume_100": [
+      "A_500",
+      "Dollar Index",
+      "cn_10y_rate",
+      "us_10y_rate",
+      "brent",
+      "Copper Futures Price",
+      "Gold Futures Price",
+      "volume_growth_5",
+      "volume_growth_10"
+    ]
+  },
+  "lr": 0.01,
+  "hidden": [
+    16,
+    32
+  ],
+  "activation": "ReLU",
+  "batch": "full",
+  "target": "same-date original price",
+  "volume_source": "AKShare Sina stock_zh_a_daily sh601899 unadjusted",
+  "volume_unit": "shares",
+  "volume_formula": "V_t / mean(V_t-1 ... V_t-k) - 1; k=5,10",
+  "calendar_alignment": "past-only ffill after rolling on trading calendar",
+  "dataset_sha256": "23062ad3c5dce8d96d849963cf04f6108fb078b896ccf0ca7a4e72965df17baf",
+  "volume_sha256": "a0f83f785c4e835b3f48c1a16797dd7c1f1f583d6c0b1cb1cdaa762eeeba792e",
+  "torch_version": "2.14.0"
+}

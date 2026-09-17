@@ -1,0 +1,7 @@
+Model,Budget,decreasing,plateau
+Base,100,10,0
+Base,200,10,0
+DirectReturns,100,10,0
+DirectReturns,200,10,0
+Stacking,100,10,0
+Stacking,200,8,2

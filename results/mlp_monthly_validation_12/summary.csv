@@ -1,0 +1,3 @@
+Method,Annual_daily_MAPE,Monthly_equal_MAPE,Annual_MSE
+Monthly validation selection,11.527021866958847,11.553620759393567,0.7954526076540678
+January selected model frozen all year,14.538276648644809,14.606939317540098,1.7472592632185495

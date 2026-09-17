@@ -1,0 +1,49 @@
+{
+  "seeds": [
+    42,
+    7,
+    123
+  ],
+  "hidden": [
+    16,
+    32
+  ],
+  "activation": "ReLU",
+  "optimizer": "Adam",
+  "lr": 0.01,
+  "batch": "full",
+  "train_loss": "standardized target MSE",
+  "metric": "MAPE percent",
+  "test_year": 2020,
+  "base_features": [
+    "A_500",
+    "Dollar Index",
+    "cn_10y_rate",
+    "us_10y_rate",
+    "brent",
+    "Copper Futures Price",
+    "Gold Futures Price"
+  ],
+  "stage2_features": [
+    "base_prediction",
+    "gold_daily",
+    "gold_vs_ma5",
+    "gold_vs_ma20",
+    "copper_daily",
+    "copper_vs_ma5",
+    "copper_vs_ma20"
+  ],
+  "stage2_training": "in-sample predictions, no OOF",
+  "ma_includes_current": true,
+  "target": "same-date original price",
+  "dataset_sha256": "23062ad3c5dce8d96d849963cf04f6108fb078b896ccf0ca7a4e72965df17baf",
+  "torch_version": "2.14.0",
+  "epoch_budgets_per_stage": [
+    100,
+    200,
+    400,
+    800
+  ],
+  "stage1_path": "shared checkpoints within seed",
+  "stage2_path": "fresh fit for each budget using corresponding stage1 predictions"
+}

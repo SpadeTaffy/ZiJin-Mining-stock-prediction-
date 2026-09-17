@@ -1,0 +1,91 @@
+{
+  "seeds": [
+    42,
+    7,
+    123,
+    2024,
+    2025,
+    0,
+    1,
+    21,
+    100,
+    999
+  ],
+  "epochs_per_stage": 100,
+  "hidden": [
+    16,
+    32
+  ],
+  "activation": "ReLU",
+  "optimizer": "Adam",
+  "lr": 0.01,
+  "batch": "full",
+  "train_loss": "standardized target MSE",
+  "metric": "MAPE percent",
+  "base_features": [
+    "A_500",
+    "Dollar Index",
+    "cn_10y_rate",
+    "us_10y_rate",
+    "brent",
+    "Copper Futures Price",
+    "Gold Futures Price"
+  ],
+  "ma_includes_current": true,
+  "target": "same-date original price",
+  "dataset_sha256": "23062ad3c5dce8d96d849963cf04f6108fb078b896ccf0ca7a4e72965df17baf",
+  "torch_version": "2.14.0",
+  "test_years": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "epochs": 100,
+  "groups": {
+    "DirectMA": [
+      "A_500",
+      "Dollar Index",
+      "cn_10y_rate",
+      "us_10y_rate",
+      "brent",
+      "Copper Futures Price",
+      "Gold Futures Price",
+      "gold_ma_deviation5",
+      "gold_ma_deviation20",
+      "copper_ma_deviation5",
+      "copper_ma_deviation20"
+    ],
+    "DirectLag": [
+      "A_500",
+      "Dollar Index",
+      "cn_10y_rate",
+      "us_10y_rate",
+      "brent",
+      "Copper Futures Price",
+      "Gold Futures Price",
+      "gold_lag_return5",
+      "gold_lag_return20",
+      "copper_lag_return5",
+      "copper_lag_return20"
+    ]
+  },
+  "definitions": {
+    "DirectMA": "P(t)/MA_k(t)-1; includes current record",
+    "DirectLag": "P(t)/P(t-k)-1"
+  },
+  "windows": [
+    5,
+    20
+  ],
+  "split": "expanding train before test year",
+  "paired_initialization": true
+}

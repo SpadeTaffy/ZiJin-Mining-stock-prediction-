@@ -1,0 +1,12 @@
+{
+  "Gold_reentries": 12,
+  "Copper_reentries": 17,
+  "Merged_trigger_days": 29,
+  "Triggered_updates": 29,
+  "Pending_after_2020": 0,
+  "Initializations": 1,
+  "Total_deployed_models": 30,
+  "Candidate_models_trained": 300,
+  "Refit_models_trained": 30,
+  "Total_stage_trainings": 660
+}

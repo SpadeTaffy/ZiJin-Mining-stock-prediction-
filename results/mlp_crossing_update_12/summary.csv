@@ -1,0 +1,4 @@
+Method,Annual_daily_MAPE,Monthly_equal_MAPE,Annual_MSE,Updates_excluding_initial
+Outward-or-inward crossing updates,6.381852188443969,6.418555462600057,0.2113211831260635,58
+Monthly selected seed + refit,8.149921238662898,8.152824524279625,0.3380871429804666,11
+Inward-only updates,6.734165294732563,6.773280406694166,0.2594900421333285,29

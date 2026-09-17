@@ -1,0 +1,11 @@
+{
+  "Year": 2015,
+  "N": 266,
+  "Start": "2015-01-01",
+  "End": "2015-12-31",
+  "Monthly_models": 12,
+  "Crossing_models": 61,
+  "Unique_selection_dates": 69,
+  "New_final_stage_trainings": 160,
+  "Seconds": 53.68196392059326
+}

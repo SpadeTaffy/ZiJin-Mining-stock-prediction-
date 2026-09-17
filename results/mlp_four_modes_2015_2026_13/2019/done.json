@@ -1,0 +1,11 @@
+{
+  "Year": 2019,
+  "N": 271,
+  "Start": "2019-01-01",
+  "End": "2019-12-31",
+  "Monthly_models": 12,
+  "Crossing_models": 35,
+  "Unique_selection_dates": 46,
+  "New_final_stage_trainings": 116,
+  "Seconds": 46.38287591934204
+}

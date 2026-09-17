@@ -1,0 +1,11 @@
+{
+  "Year": 2026,
+  "N": 152,
+  "Start": "2026-01-01",
+  "End": "2026-07-23",
+  "Monthly_models": 7,
+  "Crossing_models": 53,
+  "Unique_selection_dates": 57,
+  "New_final_stage_trainings": 124,
+  "Seconds": 85.8158631324768
+}

@@ -1,0 +1,65 @@
+{
+  "years": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "models": {
+    "Base": [
+      100,
+      400
+    ],
+    "Full": [
+      100
+    ]
+  },
+  "base_features": [
+    "A_500",
+    "Dollar Index",
+    "cn_10y_rate",
+    "us_10y_rate",
+    "brent",
+    "Copper Futures Price",
+    "Gold Futures Price"
+  ],
+  "full_features": [
+    "A_500",
+    "Dollar Index",
+    "cn_10y_rate",
+    "us_10y_rate",
+    "brent",
+    "Copper Futures Price",
+    "Gold Futures Price",
+    "gold_5",
+    "gold_20",
+    "copper_5",
+    "copper_20"
+  ],
+  "seeds": [
+    42,
+    7,
+    123,
+    2024,
+    2025
+  ],
+  "lr": 0.01,
+  "hidden": [
+    16,
+    32
+  ],
+  "activation": "ReLU",
+  "batch": "full",
+  "target": "original same-date price",
+  "split": "expanding training, fixed model within test year",
+  "dataset_sha256": "23062ad3c5dce8d96d849963cf04f6108fb078b896ccf0ca7a4e72965df17baf",
+  "torch_version": "2.14.0"
+}

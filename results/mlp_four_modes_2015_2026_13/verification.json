@@ -1,0 +1,10 @@
+{
+  "years": 12,
+  "test_records": 3124,
+  "old_seed_year_checks": 120,
+  "old_annual_summary_reproduced": true,
+  "matching_test_dates": true,
+  "chronology_verified": true,
+  "replicated_2020": true,
+  "annual_baseline_retrained": false
+}

@@ -1,0 +1,11 @@
+{
+  "Year": 2025,
+  "N": 268,
+  "Start": "2025-01-01",
+  "End": "2025-12-31",
+  "Monthly_models": 12,
+  "Crossing_models": 89,
+  "Unique_selection_dates": 95,
+  "New_final_stage_trainings": 214,
+  "Seconds": 132.72909998893738
+}

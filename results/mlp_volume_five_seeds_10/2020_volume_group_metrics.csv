@@ -1,0 +1,31 @@
+Seed,Model,Volume_group,MAPE,N
+7,Base_100,At least 2x previous 5-day volume,8.216541219942169,10
+7,Base_100,Below 2x previous 5-day volume,11.01359513170046,233
+7,Full_100,At least 2x previous 5-day volume,15.297193888223116,10
+7,Full_100,Below 2x previous 5-day volume,21.041567717744794,233
+7,Volume_100,At least 2x previous 5-day volume,14.460356132634804,10
+7,Volume_100,Below 2x previous 5-day volume,20.176551951054265,233
+42,Base_100,At least 2x previous 5-day volume,10.176325569057042,10
+42,Base_100,Below 2x previous 5-day volume,13.622989412052275,233
+42,Full_100,At least 2x previous 5-day volume,11.326189464524036,10
+42,Full_100,Below 2x previous 5-day volume,16.314512687173508,233
+42,Volume_100,At least 2x previous 5-day volume,8.671416094729064,10
+42,Volume_100,Below 2x previous 5-day volume,15.532091245793536,233
+123,Base_100,At least 2x previous 5-day volume,13.025125901993334,10
+123,Base_100,Below 2x previous 5-day volume,16.959408761185834,233
+123,Full_100,At least 2x previous 5-day volume,10.527166412353903,10
+123,Full_100,Below 2x previous 5-day volume,15.742602958215945,233
+123,Volume_100,At least 2x previous 5-day volume,14.619414944523879,10
+123,Volume_100,Below 2x previous 5-day volume,21.08434994334323,233
+2024,Base_100,At least 2x previous 5-day volume,11.001368563051848,10
+2024,Base_100,Below 2x previous 5-day volume,17.084100026076637,233
+2024,Full_100,At least 2x previous 5-day volume,12.948235434305825,10
+2024,Full_100,Below 2x previous 5-day volume,18.47350774228135,233
+2024,Volume_100,At least 2x previous 5-day volume,12.781616798502828,10
+2024,Volume_100,Below 2x previous 5-day volume,12.977294726352557,233
+2025,Base_100,At least 2x previous 5-day volume,9.194466579415405,10
+2025,Base_100,Below 2x previous 5-day volume,13.673360292053369,233
+2025,Full_100,At least 2x previous 5-day volume,10.06780566298993,10
+2025,Full_100,Below 2x previous 5-day volume,15.176415161137852,233
+2025,Volume_100,At least 2x previous 5-day volume,10.92605614499033,10
+2025,Volume_100,Below 2x previous 5-day volume,13.456334937499216,233

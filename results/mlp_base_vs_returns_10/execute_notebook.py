@@ -1,0 +1,23 @@
+import os,io,contextlib,traceback
+from pathlib import Path
+import nbformat
+from IPython.core.interactiveshell import InteractiveShell
+os.environ['MLP10_OUT']=str(Path('outputs/mlp_base_vs_returns_10').resolve())
+os.environ['MPLCONFIGDIR']='/private/tmp/mlp10-matplotlib'
+p=Path('outputs/10_再退回原始模型,确认近日涨幅的作用.ipynb')
+n=nbformat.read(p,as_version=4); shell=InteractiveShell.instance(); scope={}; count=0
+for cell in n.cells:
+ if cell.cell_type!='code':continue
+ count+=1;cell.execution_count=count;cell.outputs=[]
+ def publish(data,metadata=None,**kwargs):
+  cell.outputs.append(nbformat.v4.new_output('display_data',data=data,metadata=metadata or {}))
+ shell.display_pub.publish=publish
+ buf=io.StringIO()
+ try:
+  with contextlib.redirect_stdout(buf):exec(compile(cell.source,str(p),'exec'),scope)
+ except Exception:
+  print(buf.getvalue());traceback.print_exc();nbformat.write(n,p);raise
+ if buf.getvalue():cell.outputs.append(nbformat.v4.new_output('stream',name='stdout',text=buf.getvalue()));print(buf.getvalue())
+ print('Completed cell',count,flush=True)
+nbformat.write(n,p)
+print(scope['metrics'].to_string(index=False))

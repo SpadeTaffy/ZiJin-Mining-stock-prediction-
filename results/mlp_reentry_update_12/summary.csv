@@ -1,0 +1,3 @@
+Method,Annual_daily_MAPE,Monthly_equal_MAPE,Annual_MSE,Updates_excluding_initial
+Return-to-normal updates,6.734165383835419,6.773280494008911,0.25949004579567525,29
+Monthly selected seed + refit,8.149921238662898,8.152824524279625,0.3380871429804666,11

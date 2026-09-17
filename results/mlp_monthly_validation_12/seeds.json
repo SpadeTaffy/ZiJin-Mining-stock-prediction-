@@ -1,0 +1,27 @@
+{
+  "seeds": [
+    965409,
+    640934,
+    550343,
+    798291,
+    374583,
+    42716,
+    785634,
+    565766,
+    385735,
+    741131
+  ],
+  "excluded_prior_seeds": [
+    0,
+    1,
+    7,
+    21,
+    42,
+    100,
+    123,
+    999,
+    2024,
+    2025
+  ],
+  "method": "SystemRandom unique sample; frozen before outcomes"
+}

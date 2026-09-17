@@ -1,0 +1,16 @@
+{
+  "Gold_crossings": 24,
+  "Copper_crossings": 34,
+  "Gold_outward": 12,
+  "Gold_inward": 12,
+  "Copper_outward": 17,
+  "Copper_inward": 17,
+  "Merged_trigger_days": 58,
+  "Triggered_updates": 58,
+  "Pending_after_2020": 0,
+  "Initializations": 1,
+  "Total_deployed_models": 59,
+  "Candidate_models_trained": 590,
+  "Refit_models_trained": 59,
+  "Total_stage_trainings": 1298
+}

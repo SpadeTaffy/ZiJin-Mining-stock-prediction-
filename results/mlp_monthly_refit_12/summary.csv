@@ -1,0 +1,3 @@
+Method,Annual_daily_MAPE,Monthly_equal_MAPE,Annual_MSE
+No refit (previous selected models),11.527021884327535,11.553620779259065,0.7954526068350574
+Refit training plus validation,8.149921300926783,8.152824583280275,0.338087144593775

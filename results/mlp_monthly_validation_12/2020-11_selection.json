@@ -1,0 +1,11 @@
+{
+  "Month": "2020-11",
+  "Selected_seed": 385735,
+  "Validation_MAPE": 8.294102148674657,
+  "Train_end": "2020-07-31",
+  "Validation_start": "2020-08-03",
+  "Validation_end": "2020-10-30",
+  "Test_start": "2020-11-02",
+  "Test_end": "2020-11-30",
+  "Refit": false
+}

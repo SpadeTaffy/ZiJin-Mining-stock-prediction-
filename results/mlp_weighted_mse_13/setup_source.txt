@@ -1,0 +1,49 @@
+from pathlib import Path
+import os,json,hashlib,random
+import numpy as np
+import pandas as pd
+import torch
+from torch import nn
+from sklearn.preprocessing import StandardScaler
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+from IPython.display import display,Image
+ROOT=next((p for p in [Path.cwd(),*Path.cwd().parents] if (p/'src/pickle/Dataset.pkl').exists()),Path('/Users/admin/数据分析/ZiJin-Mining/ZiJin-Mining-stock-prediction-'))
+OUT=Path(os.environ.get('MLP12_REFIT_OUT',str(ROOT/'results/mlp_monthly_refit_12')));OUT.mkdir(parents=True,exist_ok=True)
+SEEDS=[965409, 640934, 550343, 798291, 374583, 42716, 785634, 565766, 385735, 741131]
+EXCLUDED_SEEDS=[0, 1, 7, 21, 42, 100, 123, 999, 2024, 2025]
+EPOCHS=100;LR=0.01;VALIDATION_MONTHS=3
+torch.set_num_threads(1);torch.use_deterministic_algorithms(True)
+assert len(set(SEEDS))==10 and not set(SEEDS)&set(EXCLUDED_SEEDS)
+dataset=ROOT/'src/pickle/Dataset.pkl';d=pd.read_pickle(dataset)
+raw=d['X'].copy();target=d['Y'].copy();assert raw.index.equals(target.index)
+assert raw.index.is_unique and raw.index.is_monotonic_increasing
+raw=raw.loc[raw.index<'2021-01-01'];BASE=list(raw.columns);assert len(BASE)==7
+y=pd.Series(np.asarray(target).reshape(-1),index=target.index,name='Actual').loc[raw.index]
+x=raw.copy();RETURNS=[]
+for metal,col in [('gold','Gold Futures Price'),('copper','Copper Futures Price')]:
+    name=f'{metal}_daily';x[name]=raw[col]/raw[col].shift(1)-1;RETURNS.append(name)
+    for k in [5,20]:
+        name=f'{metal}_vs_ma{k}';x[name]=raw[col]/raw[col].rolling(k,min_periods=k).mean()-1;RETURNS.append(name)
+valid=np.isfinite(x.to_numpy()).all(axis=1)&np.isfinite(y.to_numpy())
+x=x.loc[valid];y=y.loc[x.index];assert (y>0).all()
+whole=x.index[x.index.year==2020];assert len(whole)==271
+config=dict(seeds=SEEDS,excluded_prior_seeds=EXCLUDED_SEEDS,epochs_per_stage=EPOCHS,validation_months=VALIDATION_MONTHS,hidden=[16,32],activation='ReLU',optimizer='Adam',lr=LR,batch='full',base_features=BASE,stage2_features=['base_prediction']+RETURNS,stage2_training='in-sample predictions; base frozen',refit_after_selection=False,target='same-date original price',selection='minimum preceding-three-calendar-month MAPE; ties by candidate order',test_year=2020,dataset_sha256=hashlib.sha256(dataset.read_bytes()).hexdigest(),torch_version=str(torch.__version__))
+(OUT/'config.json').write_text(json.dumps(config,ensure_ascii=False,indent=2))
+x.join(y).to_csv(OUT/'features_and_target.csv',index_label='Date')
+print('Frozen candidate seeds:',SEEDS)
+
+PRIOR=OUT.parent/'mlp_monthly_validation_12'
+if not (PRIOR/'selection.csv').exists():PRIOR=ROOT/'results/mlp_monthly_validation_12'
+prior_config=json.loads((PRIOR/'config.json').read_text())
+assert prior_config['dataset_sha256']==config['dataset_sha256'] and prior_config['seeds']==SEEDS
+selection=pd.read_csv(PRIOR/'selection.csv')
+original=pd.read_csv(PRIOR/'stitched_predictions.csv',parse_dates=['Date'])
+assert len(selection)==12 and selection.Month.is_unique and len(original)==len(whole)
+assert pd.DatetimeIndex(original.Date).equals(whole)
+assert np.allclose(original.Actual,y.loc[whole])
+config.update(refit_after_selection=True,seed_selection='reuse previous monthly selection.csv without reranking',refit='fresh initialization with selected seed; 100 epochs per stage',selection_sha256=hashlib.sha256((PRIOR/'selection.csv').read_bytes()).hexdigest())
+(OUT/'config.json').write_text(json.dumps(config,ensure_ascii=False,indent=2))
+selection.to_csv(OUT/'reused_selection.csv',index=False)
+display(selection[['Month','Selected_seed','Validation_MAPE']])

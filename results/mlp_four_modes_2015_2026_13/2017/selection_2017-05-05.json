@@ -1,0 +1,71 @@
+{
+  "Anchor": "2017-05-05",
+  "Selected_seed": 42716,
+  "Validation_MAPE": 3.685291795790777,
+  "Train_end": "2017-02-04",
+  "Validation_start": "2017-02-06",
+  "Validation_end": "2017-05-04",
+  "Candidates": [
+    {
+      "Seed": 965409,
+      "Candidate_order": 0,
+      "MAPE": 4.645650923229612,
+      "MSE": 0.03640511020945493
+    },
+    {
+      "Seed": 640934,
+      "Candidate_order": 1,
+      "MAPE": 6.944473949508839,
+      "MSE": 0.07127896348455975
+    },
+    {
+      "Seed": 550343,
+      "Candidate_order": 2,
+      "MAPE": 6.5834012834061495,
+      "MSE": 0.06593294749754192
+    },
+    {
+      "Seed": 798291,
+      "Candidate_order": 3,
+      "MAPE": 4.235939823045736,
+      "MSE": 0.03138581018495559
+    },
+    {
+      "Seed": 374583,
+      "Candidate_order": 4,
+      "MAPE": 4.511110406638533,
+      "MSE": 0.032824666180368174
+    },
+    {
+      "Seed": 42716,
+      "Candidate_order": 5,
+      "MAPE": 3.685291795790777,
+      "MSE": 0.0212964205925557
+    },
+    {
+      "Seed": 785634,
+      "Candidate_order": 6,
+      "MAPE": 5.321826894620289,
+      "MSE": 0.041111420127267706
+    },
+    {
+      "Seed": 565766,
+      "Candidate_order": 7,
+      "MAPE": 3.705246492985507,
+      "MSE": 0.023310186805524723
+    },
+    {
+      "Seed": 385735,
+      "Candidate_order": 8,
+      "MAPE": 6.592177203028415,
+      "MSE": 0.06640271549351079
+    },
+    {
+      "Seed": 741131,
+      "Candidate_order": 9,
+      "MAPE": 5.650727143144751,
+      "MSE": 0.04949350427805789
+    }
+  ],
+  "Source": "new equal-MSE validation selection"
+}
