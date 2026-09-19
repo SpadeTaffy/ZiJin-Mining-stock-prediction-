@@ -1,0 +1,24 @@
+{
+  "year": 2016,
+  "N": 268,
+  "base_date": "2016-01-01",
+  "variables": {
+    "A_500": "A500指数",
+    "Dollar Index": "美元指数",
+    "cn_10y_rate": "中国10年期利率",
+    "us_10y_rate": "美国10年期利率",
+    "brent": "布伦特原油",
+    "Copper Futures Price": "铜",
+    "Gold Futures Price": "黄金"
+  },
+  "derived_model_features": 6,
+  "added_diagnostics": "other variables daily/MA5/MA20 relative changes, not new model inputs",
+  "ma_full_history": true,
+  "ma_includes_current": true,
+  "rate_change_unit": "relative percent, NOT percentage point or basis point",
+  "prediction_denominator": "actual stock first record",
+  "model_updates": 60,
+  "retrained": false,
+  "new_trigger_rule": false,
+  "dataset_sha256": "23062ad3c5dce8d96d849963cf04f6108fb078b896ccf0ca7a4e72965df17baf"
+}

@@ -1,0 +1,47 @@
+{
+  "rules": {
+    "gold_vs_ma20": [
+      0.03
+    ],
+    "copper_vs_ma20": [
+      0.03,
+      0.08
+    ],
+    "a500_vs_ma20": [
+      0.05,
+      0.08
+    ],
+    "us10y_vs_ma20": [
+      0.05,
+      0.1,
+      0.2
+    ],
+    "cn10y_vs_ma20": [
+      0.03
+    ],
+    "brent_vs_ma20": [
+      0.04,
+      0.1,
+      0.15
+    ],
+    "dollar_vs_ma20": [
+      0.01,
+      0.02
+    ]
+  },
+  "new_stage2_features": [
+    "cn10y_vs_ma20",
+    "brent_vs_ma20",
+    "dollar_vs_ma20"
+  ],
+  "baseline": "RSI+MACD+original expanded triggers (Both)",
+  "half_life": 60,
+  "technical_lag": 1,
+  "epochs": 100,
+  "hidden": [
+    16,
+    32
+  ],
+  "selection": "reuse baseline seeds on shared dates; original 10-seed equal-MSE preceding-3-month validation for additional dates",
+  "dataset_sha256": "23062ad3c5dce8d96d849963cf04f6108fb078b896ccf0ca7a4e72965df17baf"
+}

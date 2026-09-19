@@ -1,0 +1,22 @@
+{
+  "source": "/Users/admin/.codex/.chatgpt-projects/g-p-6a719defb42c8191a741b6414d38b503/outputs/rsi_macd_annual_14",
+  "predictions_sha256": "9c6a83fcf55334c7f153c9dabfd32c6d41cd8102655b7161473202838c432640",
+  "years": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "method": "Both",
+  "retrained": false,
+  "individual_charts": 12,
+  "overview_charts": 1
+}

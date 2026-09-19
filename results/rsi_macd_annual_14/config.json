@@ -1,0 +1,58 @@
+{
+  "years": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "baseline": "Features_and_triggers",
+  "half_life": 60,
+  "epochs_per_stage": 100,
+  "stage1": "reuse frozen baseline stage1 checkpoints",
+  "stage2_original_inputs": [
+    "base_prediction",
+    "gold_daily",
+    "gold_vs_ma5",
+    "gold_vs_ma20",
+    "copper_daily",
+    "copper_vs_ma5",
+    "copper_vs_ma20",
+    "a500_vs_ma20",
+    "us10y_vs_ma20"
+  ],
+  "technical_inputs": {
+    "RSI": [
+      "RSI14_lag1"
+    ],
+    "MACD": [
+      "DIFF_lag1",
+      "DEA_lag1"
+    ],
+    "Both": [
+      "RSI14_lag1",
+      "DIFF_lag1",
+      "DEA_lag1"
+    ]
+  },
+  "rsi": "Wilder 14: initial average of first 14 changes, then alpha 1/14; zero gain and loss => 50",
+  "macd": "DIFF=EMA12-EMA26; DEA=EMA9(DIFF); adjust=False seeded with first price",
+  "lag": "1 raw Dataset record; computed over full history before slicing",
+  "target": "same-date stock price; lagged technical indicators use prior observed price only",
+  "seeds_and_updates": "exactly baseline; no reranking",
+  "standardization": "fit on pre-effective training only; unweighted StandardScaler",
+  "hidden": [
+    16,
+    32
+  ],
+  "lr": 0.01,
+  "dataset_sha256": "23062ad3c5dce8d96d849963cf04f6108fb078b896ccf0ca7a4e72965df17baf",
+  "leakage_perturbation_check": true
+}

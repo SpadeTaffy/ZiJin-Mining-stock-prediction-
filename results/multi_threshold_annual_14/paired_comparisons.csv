@@ -1,0 +1,7 @@
+Period,Baseline,Alternative,Years_better,Years,Mean_MAPE_difference_pp
+2015-2025_complete,Features_only,Triggers_only,6,11,-0.2764291725264369
+2015-2026_partial,Features_only,Triggers_only,7,12,-0.2839026724603412
+2015-2025_complete,Triggers_only,Features_and_triggers,7,11,-0.20933021337030128
+2015-2026_partial,Triggers_only,Features_and_triggers,7,12,-0.17061292751980606
+2015-2025_complete,Features_only,Features_and_triggers,10,11,-0.4857593858967382
+2015-2026_partial,Features_only,Features_and_triggers,11,12,-0.4545155999801473
